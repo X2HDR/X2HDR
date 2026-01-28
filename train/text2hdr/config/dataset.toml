@@ -1,0 +1,19 @@
+[general]
+
+[[datasets]]
+resolution = 512
+batch_size = 8
+
+  [[datasets.subsets]]
+  image_dir = 'path/to/LinearHDR_size512_dataset/'
+  metadata_file = 'path/to/LinearHDR_size512_dataset/metadata.json'
+  caption_prefix = "PU21,"
+
+[[datasets]]
+resolution = 1024
+batch_size = 2
+
+  [[datasets.subsets]]
+  image_dir = 'path/to/LinearHDR_size1024_dataset/'
+  metadata_file = 'path/to/LinearHDR_size1024_dataset/metadata.json'
+  caption_prefix = "PU21,"

@@ -1,0 +1,22 @@
+# for inference
+accelerate
+transformers
+diffusers
+opencv-python
+huggingface-hub
+numpy
+pyexr
+gdown
+sentencepiece
+protobuf
+peft
+einops
+HDRutils
+
+# for training
+toml
+imagesize
+voluptuous
+wandb
+bitsandbytes
+datasets

@@ -1,0 +1,31 @@
+accelerate launch --config_file config/train.yaml --num_cpu_threads_per_process 1 flux_train_network.py \
+  --pretrained_model_name_or_path="models/flux1-dev.safetensors" \
+  --clip_l="models/clip_l.safetensors" \
+  --t5xxl="models/t5xxl_fp16.safetensors" \
+  --ae="models/ae.safetensors" \
+  --dataset_config="config/dataset.toml" \
+  --output_dir="output" \
+  --output_name="text2hdr" \
+  --save_model_as=safetensors \
+  --network_module=networks.lora_flux \
+  --network_dim=32 \
+  --network_alpha=1 \
+  --learning_rate=1e-4 \
+  --optimizer_type="AdamW8bit" \
+  --lr_scheduler="constant" \
+  --sdpa \
+  --max_train_steps=3000 \
+  --save_every_n_steps=1000 \
+  --mixed_precision="bf16" \
+  --gradient_checkpointing \
+  --gradient_accumulation_steps=4 \
+  --guidance_scale=1.0 \
+  --timestep_sampling="flux_shift" \
+  --model_prediction_type="raw" \
+  --log_with=wandb \
+  --wandb_run_name="text2hdr" \
+  --sample_at_first \
+  --sample_every_n_steps=250 \
+  --sample_prompts="sample_prompt.txt" \
+  --sample_sampler="euler" \
+  --hdr_mode

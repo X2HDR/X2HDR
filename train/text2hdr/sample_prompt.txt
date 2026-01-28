@@ -1,0 +1,29 @@
+# prompt 1
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, Sunlit desert dunes at high noon with crisp ripples, blazing highlights and hard-edged shadows --w 512 --h 512 --d 42 --g 3.5 --s 40
+
+# prompt 2
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, a beautiful sunset at a beach with a palm tree --w 512 --h 512 --d 42 --g 3.5 --s 40
+
+# prompt 3
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, A cathedral interior where morning sun streams through stained glass, casting vivid colored rays across the stone floor and deep shadows --w 512 --h 512 --d 42 --g 3.5 --s 40
+
+# prompt 4
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, a photo of New York city at a full moon night --w 512 --h 512 --d 10 --g 3.5 --s 40
+
+# prompt 5
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, Aurora borealis shimmering over a frozen lake at night with mirror-like reflections and crystal-clear stars --w 512 --h 512 --d 42 --g 3.5 --s 40
+
+# prompt 6
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, a rainy night city with lights reflecting on wet pavement --w 1024 --h 1024 --d 42 --g 3.5 --s 40
+
+# prompt 7
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, A grand, dimly lit hall with a single candle in the foreground --w 1024 --h 1024 --d 42 --g 3.5 --s 40
+
+# prompt 8
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, A quiet city street at dusk, lined with glowing street lamps and buildings in the background --w 1024 --h 1024 --d 42 --g 3.5 --s 40
+
+# prompt 9
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, Inside a blue ice cave with translucent walls glowing from backlight, sparkling frost and dramatic contrast --w 1024 --h 1024 --d 42 --g 3.5 --s 40
+
+# prompt 10
+PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, Modern kitchen with granite tops, stainless appliances, and pendant lights --w 1024 --h 1024 --d 42 --g 3.5 --s 40

@@ -1,0 +1,18 @@
+CUDA_VISIBLE_DEVICES=0 python flux_minimal_inference.py \
+  --ckpt_path="models/flux1-dev.safetensors" \
+  --model_type="flux" \
+  --clip_l="models/clip_l.safetensors" \
+  --t5xxl="models/t5xxl_fp16.safetensors" \
+  --ae="models/ae.safetensors" \
+  --prompt="PU21, masterpiece, 4K, sharp and detailed, high resolution, best quality, A grand, dimly lit hall with a single candle in the foreground." \
+  --output_dir="output/inference" \
+  --dtype="bfloat16" \
+  --seed=42 \
+  --steps=40 \
+  --guidance=3.5 \
+  --width=512 \
+  --height=512 \
+  --lora_weights="output/text2hdr.safetensors" \
+  --hdr_mode \
+  --target_luminance_peak=16.0 \
+  --batch_prompts="sample_prompt.txt"
