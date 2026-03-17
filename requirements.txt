@@ -20,3 +20,6 @@ voluptuous
 wandb
 bitsandbytes
 datasets
+
+# for eval
+DISTS_pytorch

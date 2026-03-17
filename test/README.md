@@ -11,8 +11,7 @@ To download the test set used in our paper, please visit this Google Drive [link
 
 This test set is derived from the [SI-HDR](https://www.cl.cam.ac.uk/research/rainbow/projects/sihdr_benchmark/) benchmark.
 
-As the reference HDR images are provided, merging RAW images to obtain the ground truth is unnecessary.
-
+**If you want to prepare the test set yourself**: As the reference HDR images are provided, merging RAW images to obtain the ground truth is unnecessary.
 To ensure proper pixel alignment between reference HDR and RAW images when creating (RAW, HDR) pairs for testing, use the following preprocessing code:
 
 ```python
