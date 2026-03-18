@@ -26,6 +26,8 @@ hf download --local-dir ./models/Flux black-forest-labs/FLUX.1-dev
 hf download --local-dir ./models x2hdr/HDR
 ```
 
+We use `raw2hdr_lora.safetensors` for evaluation in the paper. `raw2hdr_lora_preview.safetensors` is the model we continued to finetune from `raw2hdr_lora.safetensors` using higher-resolution images. It may perform better on higher-resolution images.
+
 ## HDR Visualization
 
 To visualize HDR images, you can use [tev](https://github.com/Tom94/tev) (downloadable HDR viewer) or [OpenHDR](https://viewer.openhdr.org/) (web-based HDR viewer).
