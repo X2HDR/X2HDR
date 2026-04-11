@@ -26,7 +26,10 @@ hf download --local-dir ./models/Flux black-forest-labs/FLUX.1-dev
 hf download --local-dir ./models x2hdr/HDR
 ```
 
-We use `raw2hdr_lora.safetensors` for evaluation in the paper. `raw2hdr_lora_preview.safetensors` is the model we continued to finetune from `raw2hdr_lora.safetensors` using higher-resolution images. It may perform better on higher-resolution images.
+- **Evaluation**: The paper reports results for `text2hdr_lora.safetensors` and `raw2hdr_lora.safetensors`.
+- `text2hdr_lora_preview.safetensors` is a preview checkpoint trained for 2,000 steps on an internal dataset.
+- `raw2hdr_lora_preview.safetensors` is a preview checkpoint obtained by continuing finetuning from `raw2hdr_lora.safetensors` on higher-resolution images.
+- The `_preview` checkpoints have not been comprehensively evaluated.
 
 ## HDR Visualization
 
