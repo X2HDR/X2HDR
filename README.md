@@ -4,6 +4,18 @@
 
 ![title](./assets/teaser.png)
 
+## Table of Contents
+- [Setup](#setup)
+- [Download Pretrained Models](#download-pretrained-models)
+- [HDR Visualization](#hdr-visualization)
+- [Inference: Text-to-HDR Image Generation](#inference-text-to-hdr-image-generation)
+- [Inference: RAW-to-HDR Image Reconstruction](#inference-raw-to-hdr-image-reconstruction)
+- [Inference: LDR-to-HDR Image Reconstruction](#inference-ldr-to-hdr-image-reconstruction)
+- [Training](#training)
+- [Test](#test)
+- [Evaluation (RAW-to-HDR)](#evaluation-raw-to-hdr)
+- [HDR Video Generation](#hdr-video-generation)
+
 ## Setup
 ```shell
 conda create -n x2hdr python=3.10
@@ -22,13 +34,13 @@ mkdir models
 # Download FLUX.1-dev model
 hf download --local-dir ./models/Flux black-forest-labs/FLUX.1-dev
 
-# Text-to-HDR and RAW-to-HDR LoRA
+# Text-to-HDR, RAW-to-HDR, and LDR-to-HDR LoRA
 hf download --local-dir ./models x2hdr/HDR
 ```
 
-- **Evaluation**: The paper reports results for `text2hdr_lora.safetensors` and `raw2hdr_lora.safetensors`.
-- `text2hdr_lora_preview.safetensors` is a preview checkpoint trained for 2,000 steps on an internal dataset.
-- `raw2hdr_lora_preview.safetensors` is a preview checkpoint obtained by continuing finetuning from `raw2hdr_lora.safetensors` on higher-resolution images.
+- **Evaluation**: The paper reports results for `text2hdr_lora`, `raw2hdr_lora`, and `ldr2hdr_lora`.
+- `text2hdr_lora_preview` is a preview checkpoint trained for 2,000 steps on an internal dataset.
+- `raw2hdr_lora_preview` is a preview checkpoint obtained by continuing finetuning from `raw2hdr_lora` on higher-resolution images.
 - The `_preview` checkpoints have not been comprehensively evaluated.
 
 ## HDR Visualization
@@ -95,7 +107,13 @@ python infer_raw2hdr.py --raw_image test/test_raw.CR2 --width 720 --height 480 -
 >
 > - **Downsampling**: RAW images typically have high resolution. Since FLUX cannot process such high resolutions, the input image is first downsampled to `width × height`.
 >
-> - **Text-Guided Hallucination**: For RAW-to-HDR without text prompt, the defaults are `guidance_scale=3.5` and `num_inference_steps=30`. When using a text prompt to guide the hallucination, you can increase these values to get results that better match the text prompt. You can also change the default `seed=2026` to get different results.
+> - **Text-Guided Hallucination**: For RAW-to-HDR without text prompt, the defaults are `guidance_scale=3.5` and `num_inference_steps=30`. When using a text prompt to guide the hallucination, you can increase these values to get results that better match the text prompt. You can also change the default `seed=42` to get different results.
+
+## Inference: LDR-to-HDR Image Reconstruction
+To reconstruct an HDR image from an LDR image without a text prompt, run:
+```shell
+python infer_ldr2hdr.py --ldr_image test/test_ldr.jpg --width 512 --height 512
+```
 
 ## Training
 Please refer to the [training README](train/README.md) for more details.
